@@ -1,0 +1,104 @@
+body {
+  
+  margin: 0;
+  background-image: url('../imagens/background5.jpg'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  color: #fff; /* Cor do texto para melhor visibilidade sobre a imagem de fundo */
+}
+
+.recipe-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente para o container */
+  border-radius: 8px; /* Adicionei bordas arredondadas ao container */
+  text-decoration: none;
+}
+
+.recipes-link,
+.back-button {
+  margin-left: 15px;
+  border: none;
+  background-color: red;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+
+.recipes-link {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.recipes-link:hover {
+  background-color: white;
+  color: red;
+  transition: 0.2s;
+}
+
+.main-title {
+  font-size: 48px;
+  margin-left: 50px;
+  font-family: 'Ephesis', cursive;
+  color: red;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: 'Ephesis', cursive;
+  color: red;
+}
+
+
+
+.ingredient-list li,
+.preparation-steps li {
+  font-size: 16px;
+  color: #333; /* Cor de texto padrão */
+  margin-bottom: 8px;
+  padding: 8px; /* Adicionei um espaçamento interno para melhorar a aparência */
+  background-color: #fff; /* Fundo branco para os itens da lista */
+  border-radius: 4px; /* Adicionei bordas arredondadas aos itens da lista */
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.step-number {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.recipe-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.back-button {
+  float: right;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: white;
+  color: red;
+  transition: 0.2s;
+}

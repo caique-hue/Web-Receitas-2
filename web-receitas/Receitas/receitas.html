@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../Receitas/receitas.css" />
+    <link rel="stylesheet" href="../Receitas/receitas.js" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&family=Ephesis&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="title-receitas">
+        <h1 id="Receitas">Receitas</h1>
+      </div>
+      <div class="container-header">
+        <button class="category-btn" onclick="('todas')">Todos</button>
+        <button class="category-btn" onclick="filterRecipes('Bolos')">
+          Bolos
+        </button>
+        <button class="category-btn" onclick="filterRecipes('Bebidas')">
+          Bebidas
+        </button>
+        <button class="category-btn" onclick="filterRecipes('Lanches')">
+          Lanches
+        </button>
+        <button class="category-btn" onclick="filterRecipes('Carnes')">
+          Carnes
+        </button>
+        <button class="category-btn" onclick="filterRecipes('Saladas')">
+          Saladas
+        </button>
+      </div>
+
+      <div class="recipe-container">
+        <div class="box Bolos">
+          <img src="../imagens/bolinhodchuva.jpg" alt="" />
+          <a href="">Bolinho de chuva</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Bolos">
+          <img src="../imagens/bolo-chocolate.jpg" alt="" />
+          <a href="">Bolo de Chocolate</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Lanches">
+          <img src="../imagens/bauru.jpg" alt="" />
+          <a href="">Bauru de forno</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Saladas">
+          <img src="../imagens/salada.jpg" alt="" />
+          <a href="">Salada de abobrinha com lascas de parmesão</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Bebidas">
+          <img src="../imagens/suco.jpg" alt="" />
+          <a href="">Suco de maçã</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Carnes">
+          <img src="../imagens/picanha.jpg" alt="" />
+          <a href="">Picanha de forno</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Bebidas">
+          <img src="../imagens/cafe-gelado.jpg" alt="" />
+          <a href="">Cafe Gelado</a>
+          <i class="favorite"></i>
+        </div>
+        <div class="box Bebidas">
+          <img src="../imagens/bolinhodchuva.jpg" alt="" />
+          <a href="">Cafe Gelado</a>
+          <i class="favorite"></i>
+        </div>
+      </div>
+
+      <script>
+        function filterRecipes(category) {
+          const recipes = document.querySelectorAll('.box')
+
+          recipes.forEach(box => {
+            // Adiciona a classe 'active' independentemente da categoria
+            box.classList.add('active')
+
+            // Verifica se a categoria não é 'todas' e se a caixa não tem a classe correspondente
+            if (category !== 'todas' && !box.classList.contains(category)) {
+              // Remove a classe 'active' se a categoria não corresponder
+              box.classList.remove('active')
+            }
+          })
+        }
+      </script>
+    </header>
+  </body>
+</html>

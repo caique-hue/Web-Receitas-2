@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background-home {
+  background-image: url(../imagens/background5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  grid-column: initial;
+  
+}
+
+
+
+.header-menu {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  background-color: #141313;
+  z-index: 100%;
+  padding: 40px 100px;
+}
+
+.navlist a {
+  margin-left: 30px;
+  border: none;
+  background-color: red;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+}
+
+.navlist a:hover {
+  background-color: white;
+  color: red;
+}
+
+.logo {
+  font-family: 'Ephesis', cursive;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: 'Ephesis', cursive;
+  padding: 100px 100px;
+  color: white;
+  
+}
+
+.text-center h1 {
+  display: flex;
+  justify-items: center;
+  margin-bottom: 40px;
+  font-size: 10rem;
+}
+
+.text-center p {
+  font-size: 4rem;
+  
+}
+
+/* Receitas */
+
+.container-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 15px;
+  margin-top: 20px; /* Ajuste conforme necessário */
+  min-height: 40px; /* Adicione uma altura mínima para evitar mudanças no layout */
+}
+
+
+
+
+.container-header button {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: red;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.container-header button:hover {
+  color: red;
+  transition: 0.2s;
+  background-color: white;
+}
+
+.box {
+  display: none;
+}
+
+.box.active {
+  display: block; 
+}
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr); /* Ajuste a altura conforme necessário */
+  gap: 10px; /* Espaço entre as células do grid */
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Adiciona cantos arredondados às imagens */
+  overflow: hidden; /* Garante que o conteúdo adicional não ultrapasse a borda da imagem */
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra totalmente a caixa mantendo as proporções */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para melhor legibilidade */
+  text-align: center;
+}
+
+/* Estilizando o botão */
+.box a {
+  padding: 4px 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  
+  
+}
+
+.box a:hover {
+  color: red;
+  transition: 0.2s;
+  background-color: white;
+}

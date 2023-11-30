@@ -1,0 +1,41 @@
+{
+  "development": {
+    "username": "root",
+    "password": "85245600q",
+    "database": "Banco de dados Web Receitas",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "85245600q",
+    "database": "Banco de dados Web Receitas",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "85245600q",
+    "database": "Banco de dados Web Receitas",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    }
+  }
+}
