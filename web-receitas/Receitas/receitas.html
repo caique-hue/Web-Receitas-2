@@ -85,12 +85,9 @@
           const recipes = document.querySelectorAll('.box')
 
           recipes.forEach(box => {
-            // Adiciona a classe 'active' independentemente da categoria
             box.classList.add('active')
 
-            // Verifica se a categoria não é 'todas' e se a caixa não tem a classe correspondente
             if (category !== 'todas' && !box.classList.contains(category)) {
-              // Remove a classe 'active' se a categoria não corresponder
               box.classList.remove('active')
             }
           })

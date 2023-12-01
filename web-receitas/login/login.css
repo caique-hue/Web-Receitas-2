@@ -162,7 +162,7 @@ background-attachment: fixed;
   padding: 10px;
   background: red;
   color: white;
-  text-decoration: none; /* Remova o sublinhado padrão do link */
+  text-decoration: none; 
   border-radius: 5px;
   font-size: 16px;
 }

@@ -3,31 +3,27 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import md5 from 'md5'
 import mysql from 'mysql2'
-
+import https from 'node:https'
 const app = express()
 const port = 3000
 
-// Configuração dos cabeçalhos CORS
 app.use((_req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', '*')
   console.log('Passou pelo app.use com CORS')
   next()
-})
+}) -
+  app.use(
+    cors({
+      origin: 'http://localhost:5173/',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      credentials: true,
+      optionsSuccessStatus: 204
+    })
+  )
 
-app.use(
-  cors({
-    origin: 'http://localhost:5137', // Substitua com a origem do seu aplicativo front-end
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204
-  })
-)
-
-// Configuração do bodyParser para analisar JSON
 app.use(bodyParser.json())
 
-// Conectar ao banco de dados MySQL
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -35,11 +31,9 @@ const db = mysql.createConnection({
   database: 'banco de dados web receitas'
 })
 
-// Rota de cadastro
 app.post('/cadastro', (req, res) => {
   const { nome, email, password } = req.body
 
-  // Verificar se o usuário já existe
   db.execute(
     'SELECT * FROM usuarios WHERE email = ?',
     [email],
@@ -55,7 +49,6 @@ app.post('/cadastro', (req, res) => {
 
       const hashedPassword = md5(password)
 
-      // Inserir usuário no banco de dados
       db.execute(
         'INSERT INTO usuarios (nome, email, password) VALUES (?, ?, ?)',
         [nome, email, hashedPassword],
@@ -72,11 +65,23 @@ app.post('/cadastro', (req, res) => {
   )
 })
 
-// Rota de login
+axios.post(
+  'https://localhost:3000/login',
+  {
+    email: email,
+    password: password
+  },
+  {
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: false
+    })
+  }
+)
+
 app.post('/login', (req, res) => {
+  console.log('entrei na função')
   const { email, password } = req.body
 
-  // Encontrar o usuário no banco de dados
   db.query(
     'SELECT * FROM usuarios WHERE email = ?',
     [email],
@@ -86,7 +91,6 @@ app.post('/login', (req, res) => {
         return res.status(500).json({ error: 'Erro interno do servidor' })
       }
 
-      // Verificar se o usuário existe e a senha está correta
       if (results.length > 0 && results[0].password === md5(password)) {
         console.log('Confirmando que chega até aqui')
         return res.json({ message: 'Login bem-sucedido' })

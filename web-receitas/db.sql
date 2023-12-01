@@ -1,7 +1,4 @@
--- Utilizar como referência para migrations e seeds
--- 'recipes-app' para produção
--- 'recipes-app-dev' para desenvolvimento
--- 'recipes-app-test' para o avaliador
+
 DROP DATABASE IF EXISTS `recipes-app`;
 
 
