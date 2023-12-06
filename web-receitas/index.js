@@ -4,7 +4,6 @@ import cors from 'cors'
 import md5 from 'md5'
 import mysql from 'mysql2'
 import https from 'node:https'
-import axios from 'axios'
 const app = express()
 const port = 3000
 
@@ -65,6 +64,19 @@ app.post('/cadastro', (req, res) => {
     }
   )
 })
+
+axios.post(
+  'https://localhost:3000/login',
+  {
+    email: email,
+    password: password
+  },
+  {
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: false
+    })
+  }
+)
 
 app.post('/login', (req, res) => {
   console.log('entrei na função')
